@@ -1,0 +1,545 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>tar · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../git/Manual.html">
+            
+                <a href="../git/Manual.html">
+            
+                    
+                    Git 手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../git/Git-SSH-Proxy.html">
+            
+                <a href="../git/Git-SSH-Proxy.html">
+            
+                    
+                    Git ssh代理设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Shell
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="tar.html">
+            
+                <a href="tar.html">
+            
+                    
+                    tar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >tar</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="introduction">Introduction</h1>
+<h4 id="1-create-tar-archive-file">1. Create tar Archive File</h4>
+<p>The below example command will create a tar archive file <code>tecmint-14-09-12.tar</code> for a directory <code>/home/tecmint</code> in current working directory. See the example command in action.</p>
+<pre><code># tar -cvf tecmint-14-09-12.tar /home/tecmint/
+
+/home/tecmint/
+/home/tecmint/cleanfiles.sh
+/home/tecmint/openvpn-2.1.4.tar.gz
+/home/tecmint/tecmint-14-09-12.tar
+/home/tecmint/phpmyadmin-2.11.11.3-1.el5.rf.noarch.rpm
+/home/tecmint/rpmforge-release-0.5.2-2.el5.rf.i386.rpm
+</code></pre><p>Let&#x2019;s discuss each option that we have used in the above command for creating a tar archive file.</p>
+<pre><code>c &#x2013; Creates a new .tar archive file.
+v &#x2013; Verbosely show the .tar file progress.
+f &#x2013; File name type of the archive file.
+</code></pre><h4 id="2-create-targz-archive-file">2. Create tar.gz Archive File</h4>
+<p>To create a compressed gzip archive file we use the option as z. For example the below command will create a compressed MyImages-14-09-12.tar.gz file for the directory /home/MyImages. (Note : tar.gz and tgz both are similar).</p>
+<pre><code># tar cvzf MyImages-14-09-12.tar.gz /home/MyImages
+</code></pre><p>OR</p>
+<pre><code># tar cvzf MyImages-14-09-12.tgz /home/MyImages
+
+/home/MyImages/
+/home/MyImages/Sara-Khan-and-model-Priyanka-Shah.jpg
+/home/MyImages/RobertKristenviolent101201.jpg
+/home/MyImages/Justintimerlake101125.jpg
+/home/MyImages/Mileyphoto101203.jpg
+/home/MyImages/JenniferRobert101130.jpg
+/home/MyImages/katrinabarbiedoll231110.jpg
+/home/MyImages/the-japanese-wife-press-conference.jpg
+/home/MyImages/ReesewitherspoonCIA101202.jpg
+/home/MyImages/yanaguptabaresf231110.jpg
+</code></pre><h4 id="3-create-tarbz2-archive-file">3. Create tar.bz2 Archive File</h4>
+<p>The bz2 feature compress and create archive file less than the size of the gzip. The bz2 compression takes more time to compress and decompress files as compared to gzip which takes less time. To create highly compressed tar file we use option as j. The following example command will create a Phpfiles-org.tar.bz2 file for a directory /home/php. (Note: tar.bz2 and tbz is similar as tb2).</p>
+<pre><code># tar cvfj Phpfiles-org.tar.bz2 /home/php
+</code></pre><p>OR</p>
+<pre><code># tar cvfj Phpfiles-org.tar.tbz /home/php
+</code></pre><p>OR </p>
+<pre><code># tar cvfj Phpfiles-org.tar.tb2 /home/php
+
+/home/php/
+/home/php/iframe_ew.php
+/home/php/videos_all.php
+/home/php/rss.php
+/home/php/index.php
+/home/php/vendor.php
+/home/php/video_title.php
+/home/php/report.php
+/home/php/object.html
+/home/php/video.php
+</code></pre><h4 id="4-untar-tar-archive-file">4. Untar tar Archive File</h4>
+<p>To untar or extract a tar file, just issue following command using option x (extract). For example the below command will untar the file public_html-14-09-12.tar in present working directory. If you want to untar in a different directory then use option as -C (specified directory).</p>
+<pre><code>## Untar files in Current Directory ##
+# tar -xvf public_html-14-09-12.tar
+
+## Untar files in specified Directory ##
+# tar -xvf public_html-14-09-12.tar -C /home/public_html/videos/
+
+/home/public_html/videos/
+/home/public_html/videos/views.php
+/home/public_html/videos/index.php
+/home/public_html/videos/logout.php
+/home/public_html/videos/all_categories.php
+/home/public_html/videos/feeds.xml
+</code></pre><h4 id="5-uncompress-targz-archive-file">5. Uncompress tar.gz Archive File</h4>
+<p>To Uncompress tar.gz archive file, just run following command. If would like to untar in different directory just use option -C and the path of the directory,  like we shown in the above example.</p>
+<pre><code># tar -xvf thumbnails-14-09-12.tar.gz
+
+/home/public_html/videos/thumbnails/
+/home/public_html/videos/thumbnails/katdeepika231110.jpg
+/home/public_html/videos/thumbnails/katrinabarbiedoll231110.jpg
+/home/public_html/videos/thumbnails/onceuponatime101125.jpg
+/home/public_html/videos/thumbnails/playbutton.png
+/home/public_html/videos/thumbnails/ReesewitherspoonCIA101202.jpg
+/home/public_html/videos/thumbnails/snagItNarration.jpg
+/home/public_html/videos/thumbnails/Minissha-Lamba.jpg
+/home/public_html/videos/thumbnails/Lindsaydance101201.jpg
+/home/public_html/videos/thumbnails/Mileyphoto101203.jpg
+</code></pre><h4 id="6-uncompress-tarbz2-archive-file">6. Uncompress tar.bz2 Archive File</h4>
+<p>To Uncompress highly compressed tar.bz2 file, just use the following command. The below example command will untar all the .flv files from the archive file.</p>
+<pre><code># tar -xvf videos-14-09-12.tar.bz2
+
+/home/public_html/videos/flv/katrinabarbiedoll231110.flv
+/home/public_html/videos/flv/BrookmuellerCIA101125.flv
+/home/public_html/videos/flv/dollybackinbb4101125.flv
+/home/public_html/videos/flv/JenniferRobert101130.flv
+/home/public_html/videos/flv/JustinAwardmovie101125.flv
+/home/public_html/videos/flv/Lakme-Fashion-Week.flv
+/home/public_html/videos/flv/Mileyphoto101203.flv
+/home/public_html/videos/flv/Minissha-Lamba.flv
+</code></pre><h4 id="7-list-content-of-tar-archive-file">7. List Content of tar Archive File</h4>
+<p>To list the contents of tar archive file, just run the following command with option t (list content). The below command will list the content of uploadprogress.tar file.</p>
+<pre><code># tar -tvf uploadprogress.tar
+
+-rw-r--r-- chregu/staff   2276 2011-08-15 18:51:10 package2.xml
+-rw-r--r-- chregu/staff   7877 2011-08-15 18:51:10 uploadprogress/examples/index.php
+-rw-r--r-- chregu/staff   1685 2011-08-15 18:51:10 uploadprogress/examples/server.php
+-rw-r--r-- chregu/staff   1697 2011-08-15 18:51:10 uploadprogress/examples/info.php
+-rw-r--r-- chregu/staff    367 2011-08-15 18:51:10 uploadprogress/config.m4
+-rw-r--r-- chregu/staff    303 2011-08-15 18:51:10 uploadprogress/config.w32
+-rw-r--r-- chregu/staff   3563 2011-08-15 18:51:10 uploadprogress/php_uploadprogress.h
+-rw-r--r-- chregu/staff  15433 2011-08-15 18:51:10 uploadprogress/uploadprogress.c
+-rw-r--r-- chregu/staff   1433 2011-08-15 18:51:10 package.xml
+</code></pre><h4 id="8-list-content-targz-archive-file">8. List Content tar.gz Archive File</h4>
+<p>Use the following command to list the content of tar.gz file.</p>
+<pre><code># tar -tvf staging.tecmint.com.tar.gz
+
+-rw-r--r-- root/root         0 2012-08-30 04:03:57 staging.tecmint.com-access_log
+-rw-r--r-- root/root       587 2012-08-29 18:35:12 staging.tecmint.com-access_log.1
+-rw-r--r-- root/root       156 2012-01-21 07:17:56 staging.tecmint.com-access_log.2
+-rw-r--r-- root/root       156 2011-12-21 11:30:56 staging.tecmint.com-access_log.3
+-rw-r--r-- root/root       156 2011-11-20 17:28:24 staging.tecmint.com-access_log.4
+-rw-r--r-- root/root         0 2012-08-30 04:03:57 staging.tecmint.com-error_log
+-rw-r--r-- root/root      3981 2012-08-29 18:35:12 staging.tecmint.com-error_log.1
+-rw-r--r-- root/root       211 2012-01-21 07:17:56 staging.tecmint.com-error_log.2
+-rw-r--r-- root/root       211 2011-12-21 11:30:56 staging.tecmint.com-error_log.3
+-rw-r--r-- root/root       211 2011-11-20 17:28:24 staging.tecmint.com-error_log.4
+</code></pre><h4 id="9-list-content-tarbz2-archive-file">9. List Content tar.bz2 Archive File</h4>
+<p>To list the content of tar.bz2 file, issue the following command.</p>
+<pre><code># tar -tvf Phpfiles-org.tar.bz2
+
+drwxr-xr-x root/root         0 2012-09-15 03:06:08 /home/php/
+-rw-r--r-- root/root      1751 2012-09-15 03:06:08 /home/php/iframe_ew.php
+-rw-r--r-- root/root     11220 2012-09-15 03:06:08 /home/php/videos_all.php
+-rw-r--r-- root/root      2152 2012-09-15 03:06:08 /home/php/rss.php
+-rw-r--r-- root/root      3021 2012-09-15 03:06:08 /home/php/index.php
+-rw-r--r-- root/root      2554 2012-09-15 03:06:08 /home/php/vendor.php
+-rw-r--r-- root/root       406 2012-09-15 03:06:08 /home/php/video_title.php
+-rw-r--r-- root/root      4116 2012-09-15 03:06:08 /home/php/report.php
+-rw-r--r-- root/root      1273 2012-09-15 03:06:08 /home/php/object.html
+</code></pre><h4 id="10-untar-single-file-from-tar-file">10. Untar Single file from tar File</h4>
+<p>To extract a single file called cleanfiles.sh from cleanfiles.sh.tar use the following command.</p>
+<pre><code># tar -xvf cleanfiles.sh.tar cleanfiles.sh
+</code></pre><p>OR</p>
+<pre><code># tar --extract --file=cleanfiles.sh.tar cleanfiles.sh
+
+cleanfiles.sh
+</code></pre><h4 id="11-untar-single-file-from-targz-file">11. Untar Single file from tar.gz File</h4>
+<p>To extract a single file tecmintbackup.xml from tecmintbackup.tar.gz archive file, use the command as follows.</p>
+<pre><code># tar -zxvf tecmintbackup.tar.gz tecmintbackup.xml
+</code></pre><p>OR</p>
+<pre><code># tar --extract --file=tecmintbackup.tar.gz tecmintbackup.xml
+
+tecmintbackup.xml
+</code></pre><h4 id="12-untar-single-file-from-tarbz2-file">12. Untar Single file from tar.bz2 File</h4>
+<p>To extract a single file called index.php from the file Phpfiles-org.tar.bz2 use the following option.</p>
+<pre><code># tar -jxvf Phpfiles-org.tar.bz2 home/php/index.php
+</code></pre><p>OR</p>
+<pre><code># tar --extract --file=Phpfiles-org.tar.bz2 /home/php/index.php
+
+/home/php/index.php
+</code></pre><ol>
+<li>Untar Multiple files from tar, tar.gz and tar.bz2 File</li>
+</ol>
+<p>To extract or untar multiple files from the tar, tar.gz and tar.bz2 archive file. For example the below command will extract &#x201C;file 1&#x201D; &#x201C;file 2&#x201D; from the archive files.</p>
+<pre><code># tar -xvf tecmint-14-09-12.tar &quot;file 1&quot; &quot;file 2&quot; 
+
+# tar -zxvf MyImages-14-09-12.tar.gz &quot;file 1&quot; &quot;file 2&quot; 
+
+# tar -jxvf Phpfiles-org.tar.bz2 &quot;file 1&quot; &quot;file 2&quot;
+</code></pre><ol>
+<li>Extract Group of Files using Wildcard</li>
+</ol>
+<p>To extract a group of files we use wildcard based extracting. For example, to extract a group of all files whose pattern begins with .php from a tar, tar.gz and tar.bz2 archive file.</p>
+<pre><code># tar -xvf Phpfiles-org.tar --wildcards &apos;*.php&apos;
+
+# tar -zxvf Phpfiles-org.tar.gz --wildcards &apos;*.php&apos;
+
+# tar -jxvf Phpfiles-org.tar.bz2 --wildcards &apos;*.php&apos;
+
+/home/php/iframe_ew.php
+/home/php/videos_all.php
+/home/php/rss.php
+/home/php/index.php
+/home/php/vendor.php
+/home/php/video_title.php
+/home/php/report.php
+/home/php/video.php
+</code></pre><h4 id="15-add-files-or-directories-to-tar-archive-file">15. Add Files or Directories to tar Archive File</h4>
+<p>To add files or directories to existing tar archived file we use the option r (append). For example we add file xyz.txt and directory php to existing tecmint-14-09-12.tar archive file.</p>
+<pre><code># tar -rvf tecmint-14-09-12.tar xyz.txt
+
+# tar -rvf tecmint-14-09-12.tar php
+
+drwxr-xr-x root/root         0 2012-09-15 02:24:21 home/tecmint/
+-rw-r--r-- root/root  15740615 2012-09-15 02:23:42 home/tecmint/cleanfiles.sh
+-rw-r--r-- root/root    863726 2012-09-15 02:23:41 home/tecmint/openvpn-2.1.4.tar.gz
+-rw-r--r-- root/root  21063680 2012-09-15 02:24:21 home/tecmint/tecmint-14-09-12.tar
+-rw-r--r-- root/root   4437600 2012-09-15 02:23:41 home/tecmint/phpmyadmin-2.11.11.3-1.el5.rf.noarch.rpm
+-rw-r--r-- root/root     12680 2012-09-15 02:23:41 home/tecmint/rpmforge-release-0.5.2-2.el5.rf.i386.rpm
+-rw-r--r-- root/root 0 2012-08-18 19:11:04 xyz.txt
+drwxr-xr-x root/root 0 2012-09-15 03:06:08 php/ 
+-rw-r--r-- root/root 1751 2012-09-15 03:06:08 php/iframe_ew.php 
+-rw-r--r-- root/root 11220 2012-09-15 03:06:08 php/videos_all.php 
+-rw-r--r-- root/root 2152 2012-09-15 03:06:08 php/rss.php 
+-rw-r--r-- root/root 3021 2012-09-15 03:06:08 php/index.php 
+-rw-r--r-- root/root 2554 2012-09-15 03:06:08 php/vendor.php 
+-rw-r--r-- root/root 406 2012-09-15 03:06:08 php/video_title.php
+</code></pre><h4 id="16-add-files-or-directories-to-targz-and-tarbz2-files">16. Add Files or Directories to tar.gz and tar.bz2 files</h4>
+<p>The tar command don&#x2019;t have a option to add files or directories to an existing compressed tar.gz and tar.bz2 archive file. If we do try will get the following error.</p>
+<pre><code># tar -rvf MyImages-14-09-12.tar.gz xyz.txt
+
+# tar -rvf Phpfiles-org.tar.bz2 xyz.txt
+
+tar: This does not look like a tar archive
+tar: Skipping to next header
+xyz.txt
+tar: Error exit delayed from previous errors
+</code></pre><ol>
+<li>How To Verify tar, tar.gz and tar.bz2 Archive File</li>
+</ol>
+<p>To verfify any tar or compressed archived file we use option as W (verify). To do, just use the following examples of command. (Note : You cannot do verification on a compressed ( <em>.tar.gz, </em>.tar.bz2 ) archive file).</p>
+<pre><code># tar tvfW tecmint-14-09-12.tar
+
+tar: This does not look like a tar archive
+tar: Skipping to next header
+tar: Archive contains obsolescent base-64 headers
+tar: VERIFY FAILURE: 30740 invalid headers detected
+Verify -rw-r--r-- root/root    863726 2012-09-15 02:23:41 /home/tecmint/openvpn-2.1.4.tar.gz
+Verify -rw-r--r-- root/root  21063680 2012-09-15 02:24:21 /home/tecmint/tecmint-14-09-12.tar
+tar: /home/tecmint/tecmint-14-09-12.tar: Warning: Cannot stat: No such file or directory
+Verify -rw-r--r-- root/root   4437600 2012-09-15 02:23:41 home/tecmint/phpmyadmin-2.11.11.3-1.el5.rf.noarch.rpm
+tar: /home/tecmint/phpmyadmin-2.11.11.3-1.el5.rf.noarch.rpm: Warning: Cannot stat: No such file or directory
+Verify -rw-r--r-- root/root     12680 2012-09-15 02:23:41 home/tecmint/rpmforge-release-0.5.2-2.el5.rf.i386.rpm
+tar: /home/tecmint/rpmforge-release-0.5.2-2.el5.rf.i386.rpm: Warning: Cannot stat: No such file or directory
+Verify -rw-r--r-- root/root         0 2012-08-18 19:11:04 xyz.txt
+Verify drwxr-xr-x root/root         0 2012-09-15 03:06:08 php/
+</code></pre><h4 id="18-check-the-size-of-the-tar-targz-and-tarbz2-archive-file">18. Check the Size of the tar, tar.gz and tar.bz2 Archive File</h4>
+<p>To check the size of any tar, tar.gz and tar.bz2 archive file, use the following command. For example the below command will display the size of archive file in Kilobytes (KB).</p>
+<pre><code># tar -czf - tecmint-14-09-12.tar | wc -c
+12820480
+
+# tar -czf - MyImages-14-09-12.tar.gz | wc -c
+112640
+
+# tar -czf - Phpfiles-org.tar.bz2 | wc -c
+20480
+</code></pre><p>Tar Usage and Options</p>
+<pre><code>c &#x2013; create a archive file.
+x &#x2013; extract a archive file.
+v &#x2013; show the progress of archive file.
+f &#x2013; filename of archive file.
+t &#x2013; viewing content of archive file.
+j &#x2013; filter archive through bzip2.
+z &#x2013; filter archive through gzip.
+r &#x2013; append or update files or directories to existing archive file.
+W &#x2013; Verify a archive file.
+wildcards &#x2013; Specify patterns in unix tar command.
+</code></pre><p>That&#x2019;s it for now, hope the above tar command examples are enough for you to learn and for more information please use man tar command.</p>
+<p>If you are looking to split any large tar archive file into multiple parts or blocks, just go through this article:</p>
+<p>Don&#x2019;t Miss: Split Large &#x2018;tar&#x2019; Archive into Multiple Files of Certain Size</p>
+<p>If we&#x2019;ve missed any example please do share with us via comment box and please don&#x2019;t forget to share this article with your friends. This is the best way to say thanks&#x2026;..</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"tar","level":"1.3.1","depth":2,"previous":{"title":"Shell","level":"1.3","depth":1,"ref":"","articles":[{"title":"tar","level":"1.3.1","depth":2,"path":"shell/tar.md","ref":"shell/tar.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"shell/tar.md","mtime":"2019-08-29T01:16:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T01:17:40.056Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

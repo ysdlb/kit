@@ -1,0 +1,345 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Git 手册 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Git-SSH-Proxy.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="Manual.html">
+            
+                <a href="Manual.html">
+            
+                    
+                    Git 手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Git-SSH-Proxy.html">
+            
+                <a href="Git-SSH-Proxy.html">
+            
+                    
+                    Git ssh代理设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Shell
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../shell/tar.html">
+            
+                <a href="../shell/tar.html">
+            
+                    
+                    tar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Git 手册</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="blog">Blog</h1>
+<p>Share my ideas in this repository</p>
+<h4 id="git-config">git config</h4>
+<p>&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x9488;&#x5BF9;&#x6240;&#x6709;&#x7528;&#x6237;&#x3001;&#x672C;&#x7528;&#x6237;</p>
+<h4 id="git-status">git status</h4>
+<ol>
+<li>&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x662F;&#x5426;&#x6709;&#x672A;&#x8DDF;&#x8E2A;&#x7684;&#x6587;&#x4EF6;</li>
+<li>&#x662F;&#x5426;&#x6709;&#x6587;&#x4EF6;&#x5728;&#x4E0A;&#x6B21;&#x63D0;&#x4EA4;&#x540E;&#x66F4;&#x6539;&#x8FC7;</li>
+</ol>
+<h4 id="git-add">git add</h4>
+<ol>
+<li>&#x5F00;&#x59CB;&#x8DDF;&#x8E2A;&#x65B0;&#x6587;&#x4EF6;</li>
+<li>&#x628A;&#x5DF2;&#x8DDF;&#x8E2A;&#x6587;&#x4EF6;&#x653E;&#x5230;&#x6682;&#x5B58;&#x533A;(&#x4FEE;&#x6539;&#x8FC7;&#x7684;)</li>
+<li>&#x5408;&#x5E76;&#x65F6;&#x628A;&#x6709;&#x51B2;&#x7A81;&#x7684;&#x6587;&#x4EF6;&#x6807;&#x8BB0;&#x4E3A;&#x5DF2;&#x89E3;&#x51B3;&#x72B6;&#x6001;<h4 id="git-diff">git diff</h4>
+&#x663E;&#x793A;&#x8FD8;&#x6CA1;&#x6709;&#x6682;&#x5B58;&#x8D77;&#x6765;&#x7684;&#x6539;&#x52A8;&#xFF0C;&#x6CE8;&#x610F;&#x5E76;&#x4E0D;&#x662F;&#x8FD9;&#x6B21;&#x5DE5;&#x4F5C;&#x548C;&#x4E0A;&#x6B21;&#x63D0;&#x4EA4;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x5373;&#x5355;&#x5355;git diff&#x4E0D;&#x8FC7;&#x662F;&#x663E;&#x793A;&#x8FD8;&#x6CA1;&#x6709;&#x6682;&#x5B58;&#x8D77;&#x6765;&#x7684;&#x6539;&#x52A8;&#x3002;&#x82E5;&#x8981;&#x67E5;&#x770B;&#x5DF2;&#x7ECF;&#x6682;&#x5B58;&#x8D77;&#x6765;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x4E0A;&#x6B21;&#x63D0;&#x4EA4;&#x65F6;&#x7684;&#x5FEB;&#x7167;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;<code>git dif --cached</code>&#x547D;&#x4EE4;&#xFF0C;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x8FD8;&#x5141;&#x8BB8;&#x7528;<code>git diff --staged</code>&#x3002;</li>
+</ol>
+<h4 id="git-commit">git commit</h4>
+<p>&#x63D0;&#x4EA4;&#x5DF2;&#x7ECF;&#x6682;&#x5B58;&#x8D77;&#x6765;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x6B21;&#x63D0;&#x4EA4;&#x524D;&#xFF0C;&#x7528;git status&#x67E5;&#x770B;&#x4E00;&#x4E0B;&#xFF0C;&#x786E;&#x8BA4;&#x8FD8;&#x6709;&#x4EC0;&#x4E48;&#x4FEE;&#x6539;&#x8FC7;&#x7684;&#x6216;&#x65B0;&#x5EFA;&#x7684;&#x6587;&#x4EF6;&#x8FD8;&#x6CA1;&#x6709;git add&#x8FC7;&#x3002;</p>
+<ul>
+<li>&#x5728;shell&#x4E0B;&#x6267;&#x884C;&#x6B64;&#x547D;&#x4EE4;&#x4F1A;&#x542F;&#x7528;shell&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>$EDITOR</code>&#x6240;&#x6307;&#x5B9A;&#x7684;&#x8F6F;&#x4EF6;&#xFF0C;&#x7528;&#x6237;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>git config --global core.editor</code>&#x547D;&#x4EE4;&#x8BBE;&#x7F6E;&#x5176;&#x4ED6;&#x7684;&#x7F16;&#x8F91;&#x8F6F;&#x4EF6;&#x3002;</li>
+<li>&#x5728;&#x8C03;&#x51FA;&#x7684;&#x7F16;&#x8F91;&#x8F6F;&#x4EF6;&#x4E2D;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x63D0;&#x4EA4;&#x6D88;&#x606F;&#x5305;&#x542B;&#x6700;&#x540E;&#x4F9D;&#x6B21;&#x8FD0;&#x884C;git status&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x88AB;&#x653E;&#x5230;&#x6CE8;&#x91CA;&#x884C;&#x91CC;&#xFF0C;&#x7528;&#x6237;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;-v&#x9009;&#x9879;&#x5C06;&#x4FEE;&#x6539;&#x5DEE;&#x5F02;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#x90FD;&#x5305;&#x542B;&#x5230;&#x6CE8;&#x91CA;&#x4E2D;&#x53BB;&#xFF1B;**&#x9000;&#x51FA;&#x7F16;&#x8F91;&#x5668;&#x65F6;&#xFF0C;Git&#x4F1A;&#x4E22;&#x6389;&#x6CE8;&#x91CA;&#x884C;&#xFF0C;&#x5C06;&#x8BF4;&#x660E;&#x5185;&#x5BB9;&#x548C;&#x672C;&#x6B21;&#x66F4;&#x65B0;&#x63D0;&#x4EA4;&#x5230;&#x4ED3;&#x5E93;&#x3002;</li>
+<li><code>-a</code>&#x9009;&#x9879;&#x81EA;&#x52A8;&#x628A;&#x6240;&#x6709;&#x5DF2;&#x7ECF;&#x8DDF;&#x8E2A;&#x8FC7;&#x7684;&#x6587;&#x4EF6;&#x6682;&#x5B58;&#x8D77;&#x6765;&#x4E00;&#x5E76;&#x63D0;&#x4EA4;&#xFF0C;&#x4ECE;&#x800C;&#x8DF3;&#x8FC7;git add&#x6B65;&#x9AA4;</li>
+<li><code>-m</code>&#x9009;&#x9879;&#x6DFB;&#x52A0;&#x540E;&#x4E0D;&#x4F1A;&#x8FDB;&#x5165;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x76F4;&#x63A5;&#x5728;<code>-m</code>&#x53C2;&#x6570;&#x540E;&#x9762;&#x52A0;&#x63D0;&#x4EA4;&#x8BF4;&#x660E;&#x3002;</li>
+<li><code>--amend</code>&#xFF0C;&#x4FEE;&#x6539;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#xFF0C;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x6682;&#x5B58;&#x533A;&#x57DF;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x63D0;&#x4EA4;&#x8BF4;&#x660E;</li>
+</ul>
+<h4 id="git-rm">git rm</h4>
+<p>git rm&#x540E;(&#x4E00;&#x822C;&#x8BE5;&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x5220;&#x9664;&#x4E86;)&#x7684;&#x6587;&#x4EF6;&#x4E0D;&#x518D;&#x7EB3;&#x5165;&#x7248;&#x672C;&#x7BA1;&#x7406;&#x4E86;&#x3002;&#x5982;&#x679C;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x4FEE;&#x6539;&#x8FC7;&#x5E76;&#x4E14;&#x5DF2;&#x7ECF;&#x653E;&#x5230;&#x6682;&#x5B58;&#x533A;&#x57DF;&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x8981;&#x7528;&#x5F3A;&#x5236;&#x5220;&#x9664;&#x9009;&#x9879;<code>-f</code>&#xFF0C;&#x4EE5;&#x9632;&#x8BEF;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x540E;&#x4E22;&#x5931;&#x4FEE;&#x6539;&#x7684;&#x5185;&#x5BB9;</p>
+<p>&#x5982;&#x679C;&#x53EA;&#x60F3;&#x628A;&#x6587;&#x4EF6;&#x4ECE;Git&#x4ED3;&#x5E93;&#x4E2D;&#x5220;&#x9664;&#xFF08;&#x5373;&#x6682;&#x5B58;&#x533A;&#xFF09;&#xFF0C;&#x4F46;&#x4ECD;&#x7136;&#x5E0C;&#x671B;&#x4FDD;&#x7559;&#x5728;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x8981;&#x7528;--cached&#x9009;&#x9879;&#x3002;</p>
+<h4 id="git-mv">git mv</h4>
+<p>&#x4E00;&#x822C;&#x76F8;&#x5F53;&#x4E0E;&#x4E0B;&#x9762;&#x4E09;&#x6761;&#x547D;&#x4EE4;&#xFF1A;<br></p>
+<pre><code class="lang-bash">$ mv <span class="hljs-built_in">source</span> dest
+$ git rm <span class="hljs-built_in">source</span>
+$ git add dest
+</code></pre>
+<h4 id="git-log">git log</h4>
+<p>&#x67E5;&#x770B;&#x63D0;&#x4EA4;&#x8BB0;&#x5F55;&#xFF0C;<code>git log -p -n &lt;number&gt;</code>&#x53EF;&#x4EE5;&#x9650;&#x5236;&#x8F93;&#x51FA;&#x7684;&#x957F;&#x5EA6;</p>
+<h4 id="git-reset-head-">git reset HEAD <fimename></fimename></h4>
+<p>&#x53D6;&#x6D88;&#x6682;&#x5B58;</p>
+<h4 id="git-checkout----">git checkout -- <file></file></h4>
+<p>&#x53D6;&#x6D88;&#x5BF9;&#x6587;&#x4EF6;&#x7684;&#x4FEE;&#x6539;</p>
+<h5 id="git-remote">git remote</h5>
+<p>&#x5217;&#x51FA;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</p>
+<ul>
+<li><code>-v</code>&#xFF0C;&#x5728;&#x6BCF;&#x4E2A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x540D;&#x540E;&#x663E;&#x793A;&#x5BF9;&#x5E94;&#x7684;&#x514B;&#x9686;&#x5730;&#x5740;&#xFF0C;&#x597D;&#x50CF;&#x53EA;&#x6709;&#x7528;SSH URL&#x94FE;&#x63A5;&#x7684;&#x90A3;&#x4E2A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x6211;&#x4EEC;&#x624D;&#x80FD;&#x63A8;&#x9001;&#x6570;&#x636E;&#x4E0A;&#x53BB;&#xFF08;&#x4E00;&#x822C;&#x5F62;&#x5F0F;&#x662F;git@github.com:username/depo.git</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="Git-SSH-Proxy.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Git ssh代理设置">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Git 手册","level":"1.2.1","depth":2,"next":{"title":"Git ssh代理设置","level":"1.2.2","depth":2,"path":"git/Git-SSH-Proxy.md","ref":"git/Git-SSH-Proxy.md","articles":[]},"previous":{"title":"Git","level":"1.2","depth":1,"ref":"","articles":[{"title":"Git 手册","level":"1.2.1","depth":2,"path":"git/Manual.md","ref":"git/Manual.md","articles":[]},{"title":"Git ssh代理设置","level":"1.2.2","depth":2,"path":"git/Git-SSH-Proxy.md","ref":"git/Git-SSH-Proxy.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/Manual.md","mtime":"2019-09-02T14:49:57.037Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T01:17:40.056Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
